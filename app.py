@@ -11,6 +11,9 @@ import json
 import random
 import pickle
 
+import os
+os.system('python -m pip install --upgrade pip')
+
 app = Flask(__name__)
 CORS(app)
 
