@@ -11,8 +11,8 @@ import json
 import random
 import pickle
 
-import os
-os.system('python -m pip install --upgrade pip')
+# import os
+# os.system('python -m pip install --upgrade pip')
 
 app = Flask(__name__)
 CORS(app)
@@ -118,4 +118,4 @@ def getHome():
     return {"response": "No response"}
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run()
