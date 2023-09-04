@@ -97,12 +97,8 @@ def bag_of_words(s, words):
 
     return np.array(bag)
 
-@app.route('/', methods=["GET"])
-def getHome():
-    inp = request.get_json()
-
-    inp = inp["data"]
-
+@app.route('/<string:inp>', methods=["GET"])
+def getHome(inp):
     print(inp)
 
     results = model.predict([bag_of_words(inp, words)])
@@ -118,4 +114,4 @@ def getHome():
     return {"response": "No response"}
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, port=5000)
